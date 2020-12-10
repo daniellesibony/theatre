@@ -1,9 +1,9 @@
 <template>
-  <section v-if=" ifShow" class="seat-preview">
-<div class="seat-card"></div>
-<span>{{coords}}</span>
+  <section v-if="ifShow" class="seat-preview">
+    <div class="seat-card"></div>
+    <span>{{ coords }}</span>
 
-
+    <div v-if="isReserved"></div>
   </section>
 </template>
 
@@ -15,10 +15,20 @@ export default {
   },
   data() {
     return {
-      availble: '',
-      reserved: '',
-      selected: '',
+      isAvailble: false,
+      isReserved: false,
+      isSelected: false,
+    
     };
+  },
+
+  methods: {
+    // toggleReserve(){
+    //   this.isReserved === !this.isReserved
+    // },
+    isReserved(){
+      return this.isReserved === true
+    }
   },
   computed:{
     ifShow(){
