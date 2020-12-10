@@ -1,5 +1,5 @@
 <template>
-  <section class="seat-preview flex">
+  <section class="seat-preview">
 <div class="seat-card"></div>
 <span>{{coords}}</span>
 

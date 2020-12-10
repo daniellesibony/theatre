@@ -1,9 +1,9 @@
 <template>
   <section class="center-seats">
-<div  v-for="(row, i) in seats" :key="i">
+<div class="seat-row flex"  v-for="(row, i) in seats" :key="i">
 <span v-for="(seat,j) in row" :key="j" >
   <!-- <seat-preview :x=seat.x :y=seat.y /> -->
-  <seat-preview :coords= {x:seat.x,y:seat.y} />
+  <seat-preview  :coords= {x:seat.x,y:seat.y} />
 <!-- row ={{seat.x}}
 col ={{seat.y}} -->
 </span>
