@@ -1,8 +1,8 @@
 <template>
   <section class="center-seats">
-
-
-
+<div  v-for="(seat, index) in seats" :key="index">
+<span>X:{{seat[index].x}} y:{{seat[index].y}}</span>
+</div>
   </section>
 </template>
 
