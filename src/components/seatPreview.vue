@@ -1,7 +1,7 @@
 <template>
   <section v-if=" ifShow" class="seat-preview">
 <div class="seat-card"></div>
-<span>{{coords}}</span>
+<img src="../../src/assets/svgs/sofa.svg" alt="">
 
 
   </section>
