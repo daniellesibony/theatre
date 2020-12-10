@@ -28,7 +28,7 @@
   <section  class="seat-preview">
 <div class="seat-card"></div>
 <img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt=""  @click="open"
-      :class="{ reserved: isReserved, selected: isSelected }">
+      :class="{ selected: isSelected, reserved: isReserved }">
 <div class="blank" v-if="isBlank">---</div>
  <div  v-if="isShown" id="myModal" class="modal">
       <div class="modal-content">
@@ -61,37 +61,22 @@ export default {
 
   methods: {
     open(){
-
       this.isReserved = true
-      // setTimeout(this.isShown = true, 500)
-
       this.isShown = true
-
       setTimeout(this.cancel, 10000)
     },
     cancel(){
       this.isShown = false
       this.isReserved = false
-
     },
-
     confirm(){
-       this.isShown = false
-
-      this.isSelected = true
+      (this.isSelected = true) && (this.isReserved = false)
+      this.isShown = false
+      // this.isSelected = true
+     
     },
   },
   computed:{
-    // ifShow(){
-    //   if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return false;
-    //   if ((this.coords.x<4&&this.coords.x>1)&& (this.coords.y<4 || this.coords.y > 24 )) return false;
-    //   if ((this.coords.x<5&&this.coords.x>3)&& (this.coords.y<3 || this.coords.y > 26 )) return false;
-    //   if ((this.coords.x<7&&this.coords.x>4)&& (this.coords.y<1 )) return false;
-    //   // if ((this.coords.x>7)&& (this.coords.y<19&&this.coords.y>9 )) return false;
-     
-    //   // if (this.coords.x===8|| this.coords.x===20) return false;
-    //   else return true
-    // },
     isBlank(){
       // if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return false;
           if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return true;
