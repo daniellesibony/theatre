@@ -1,6 +1,9 @@
 <template>
   <section class="seat-preview">
-<div class="seat-card"></div>
+<div class="seat-card">
+
+
+</div>
 
 
 
@@ -15,7 +18,6 @@ export default {
   },
   data() {
     return {
-      // seats: [{ available: "" }, { reserved: "" }, { selected: "" }],
       availble: '',
       reserved: '',
       selected: '',
