@@ -1,7 +1,11 @@
 <template>
   <section class="center-seats">
-<div  v-for="(seat, index) in seats" :key="index">
-<span>X:{{seat[index].x}} y:{{seat[index].y}}</span>
+<div  v-for="(row, i) in seats" :key="i">
+<span v-for="(seat,j) in row" :key="j" >
+col ={{seat.x}}
+row ={{seat.y}}
+</span>
+
 </div>
   </section>
 </template>
@@ -15,9 +19,9 @@ data(){
 },
 created() {
   let seats=[]
-  for(var i=0; i<9; i++) {
+  for(var i=0; i<6; i++) {
     seats[i] = [];
-    for(var j=0; j<9; j++) {
+    for(var j=0; j<12; j++) {
         seats[i][j] = {
           x:i,
           y:j
