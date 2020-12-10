@@ -1,25 +1,23 @@
 <template>
-  <section class="center-seats"></section>
+  <section class="center-seats">
+<div  v-for="(seat, index) in seats" :key="index">
+<span>X:{{seat[index].x}} y:{{seat[index].y}}</span>
+</div>
+  </section>
 </template>
 
 <script>
 export default {
-  data() {
+data(){
     return {
-<<<<<<< HEAD
-      seats: [],
-    };
-  },
-};
-=======
        seats:[]
     }
 },
 created() {
   let seats=[]
-  for(var i=0; i<9; i++) {
+  for(var i=0; i<12; i++) {
     seats[i] = [];
-    for(var j=0; j<9; j++) {
+    for(var j=0; j<12; j++) {
         seats[i][j] = {
           x:i,
           y:j
@@ -29,8 +27,8 @@ created() {
 }
 },
 }
->>>>>>> 56e343aa6dc294755c372f8b5ec99539d27fa211
 </script>
 
 <style>
+
 </style>
