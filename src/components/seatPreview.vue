@@ -1,6 +1,6 @@
 <template>
   <section class="seat-preview">
-
+<div class="seat-card"></div>
 
 
 
@@ -11,7 +11,7 @@
 import seatListVue from "./seatList.vue";
 export default {
   props:{
-    seat: Object
+    coords: Object
   },
   data() {
     return {
