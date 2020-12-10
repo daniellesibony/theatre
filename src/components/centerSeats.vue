@@ -1,22 +1,16 @@
 <template>
-  <section class="center-seats">
-
-
-
-  </section>
+  <section class="center-seats"></section>
 </template>
 
 <script>
 export default {
-data(){
+  data() {
     return {
-        numOfCols: 12,
-        numOfRows: 6
-    }
-}
-}
+      seats: [],
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
