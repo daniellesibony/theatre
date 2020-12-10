@@ -1,5 +1,5 @@
 <template>
-  <section class="seat-preview">
+  <section v-if=" ifShow" class="seat-preview">
 <div class="seat-card"></div>
 <span>{{coords}}</span>
 
@@ -20,6 +20,12 @@ export default {
       selected: '',
     };
   },
+  computed:{
+    ifShow(){
+      if (this.coords.x===0 && (this.coords.y===0 || this.coords.y===11 )) return false;
+      else return true
+    }
+  }
 };
 </script>
 
