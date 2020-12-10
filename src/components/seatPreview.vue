@@ -15,7 +15,6 @@ export default {
   },
   data() {
     return {
-      // seats: [{ available: "" }, { reserved: "" }, { selected: "" }],
       availble: '',
       reserved: '',
       selected: '',
