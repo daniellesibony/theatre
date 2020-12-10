@@ -1,13 +1,21 @@
 <template>
-  <section v-if="ifShow" class="seat-preview">
-    <div class="seat-card"></div>
-    <img
+
+  <!-- <section v-if=" ifShow" class="seat-preview"> -->
+    <!-- <div>
+  <section  class="seat-preview">
+<div class="seat-card"></div>
+<img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt="">
+<div class="blank" v-if="isBlank">---</div>
+  </section> -->
+
+  <!-- <section v-if="ifShow" class="seat-preview"> -->
+    <!-- <div class="seat-card"></div>
+    <img v-if="!isBlank"
       src="../../src/assets/svgs/sofa.svg"
       alt=""
       @click="open"
       :class="{ reserved: isReserved, selected: isSelected }"
     />
-    <!-- <el-button v-if="isReserved" type="text"></el-button> -->
     <div  v-if="isShown" id="myModal" class="modal">
       <div class="modal-content">
         <span  @click="cancel" class="close">&times;</span>
@@ -15,8 +23,25 @@
         <button @click="confirm">Confirm</button>
         <button @click="cancel">Cancel</button>
       </div>
+    </div> -->
+  <!-- <section v-if=" ifShow" class="seat-preview"> -->
+  <section  class="seat-preview">
+<div class="seat-card"></div>
+<img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt=""  @click="open"
+      :class="{ reserved: isReserved, selected: isSelected }">
+<div class="blank" v-if="isBlank">---</div>
+ <div  v-if="isShown" id="myModal" class="modal">
+      <div class="modal-content">
+        <span  @click="cancel" class="close">&times;</span>
+        <p>Confirm This Seat</p>
+        <button @click="confirm">Confirm</button>
+        <button @click="cancel">Cancel</button>
+      </div>
     </div>
+    
+
   </section>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -54,15 +79,32 @@ export default {
        this.isShown = false
 
       this.isSelected = true
-    }
-  },
-  computed: {
-    ifShow() {
-      if (this.coords.x === 0 && (this.coords.y === 0 || this.coords.y === 11))
-        return false;
-      else return true;
     },
   },
+  computed:{
+    // ifShow(){
+    //   if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return false;
+    //   if ((this.coords.x<4&&this.coords.x>1)&& (this.coords.y<4 || this.coords.y > 24 )) return false;
+    //   if ((this.coords.x<5&&this.coords.x>3)&& (this.coords.y<3 || this.coords.y > 26 )) return false;
+    //   if ((this.coords.x<7&&this.coords.x>4)&& (this.coords.y<1 )) return false;
+    //   // if ((this.coords.x>7)&& (this.coords.y<19&&this.coords.y>9 )) return false;
+     
+    //   // if (this.coords.x===8|| this.coords.x===20) return false;
+    //   else return true
+    // },
+    isBlank(){
+      // if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return false;
+          if ((this.coords.x<2)&& (this.coords.y<5 || this.coords.y > 23 )) return true;
+      if ((this.coords.x<4&&this.coords.x>1)&& (this.coords.y<4 || this.coords.y > 24 )) return true;
+      if ((this.coords.x<5&&this.coords.x>3)&& (this.coords.y<3 || this.coords.y > 26 )) return true;
+      if ((this.coords.x<7&&this.coords.x>4)&& (this.coords.y<1 )) return true;
+      if ((this.coords.x>5)&& (this.coords.y<20&&this.coords.y>7 )) return true;
+      if ((this.coords.x===7)&& (this.coords.y<20 &&this.coords.y>5 )) return true;
+      if ((this.coords.x>7)&& (this.coords.y<20)) return true;
+      if (this.coords.y===8|| this.coords.y===20) return true;
+      else return false
+    }
+  }
 };
 </script>
 

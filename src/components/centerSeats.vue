@@ -1,6 +1,6 @@
 <template>
   <section class="center-seats">
-<div class="seat-row flex"  v-for="(row, i) in seats" :key="i">
+<div class="seat-row flex justify-center"  v-for="(row, i) in seats" :key="i">
 <span v-for="(seat,j) in row" :key="j" >
   <!-- <seat-preview :x=seat.x :y=seat.y /> -->
   <seat-preview  :coords= {x:seat.x,y:seat.y} />
@@ -23,9 +23,9 @@ data(){
 },
 created() {
   let seats=[]
-  for(var i=0; i<6; i++) {
+  for(var i=0; i<9; i++) {
     seats[i] = [];
-    for(var j=0; j<12; j++) {
+    for(var j=0; j<28; j++) {
         seats[i][j] = {
           x:i,
           y:j

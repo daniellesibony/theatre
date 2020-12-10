@@ -1,8 +1,8 @@
 <template>
   <section class="theatre-app">
   <h1 class="screen">Screen is this Way</h1>
-<div class="flex">
-  <left-side-seats/>
+<div class="flex justify-center">
+  <!-- <left-side-seats/> -->
 <center-seats/>
 </div>
 
