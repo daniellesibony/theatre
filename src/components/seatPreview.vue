@@ -1,25 +1,85 @@
 <template>
+
   <!-- <section v-if=" ifShow" class="seat-preview"> -->
+    <!-- <div>
   <section  class="seat-preview">
 <div class="seat-card"></div>
 <img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt="">
 <div class="blank" v-if="isBlank">---</div>
+  </section> -->
+
+  <!-- <section v-if="ifShow" class="seat-preview"> -->
+    <!-- <div class="seat-card"></div>
+    <img v-if="!isBlank"
+      src="../../src/assets/svgs/sofa.svg"
+      alt=""
+      @click="open"
+      :class="{ reserved: isReserved, selected: isSelected }"
+    />
+    <div  v-if="isShown" id="myModal" class="modal">
+      <div class="modal-content">
+        <span  @click="cancel" class="close">&times;</span>
+        <p>Confirm This Seat</p>
+        <button @click="confirm">Confirm</button>
+        <button @click="cancel">Cancel</button>
+      </div>
+    </div> -->
+  <!-- <section v-if=" ifShow" class="seat-preview"> -->
+  <section  class="seat-preview">
+<div class="seat-card"></div>
+<img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt=""  @click="open"
+      :class="{ reserved: isReserved, selected: isSelected }">
+<div class="blank" v-if="isBlank">---</div>
+ <div  v-if="isShown" id="myModal" class="modal">
+      <div class="modal-content">
+        <span  @click="cancel" class="close">&times;</span>
+        <p>Confirm This Seat</p>
+        <button @click="confirm">Confirm</button>
+        <button @click="cancel">Cancel</button>
+      </div>
+    </div>
+    
 
   </section>
+  <!-- </div> -->
 </template>
 
 <script>
 import seatListVue from "./seatList.vue";
 export default {
-  props:{
-    coords: Object
+  props: {
+    coords: Object,
   },
   data() {
     return {
-      availble: '',
-      reserved: '',
-      selected: '',
+      isAvailble: false,
+      isReserved: false,
+      isSelected: false,
+      isShown: false
     };
+  },
+
+  methods: {
+    open(){
+
+      this.isReserved = true
+      // setTimeout(this.isShown = true, 500)
+
+      this.isShown = true
+
+      setTimeout(this.cancel, 10000)
+    },
+    cancel(){
+      this.isShown = false
+      this.isReserved = false
+
+    },
+
+    confirm(){
+       this.isShown = false
+
+      this.isSelected = true
+    },
   },
   computed:{
     // ifShow(){
