@@ -2,8 +2,10 @@
   <section class="center-seats">
 <div  v-for="(row, i) in seats" :key="i">
 <span v-for="(seat,j) in row" :key="j" >
-row ={{seat.x}}
-col ={{seat.y}}
+  <!-- <seat-preview :x=seat.x :y=seat.y /> -->
+  <seat-preview :coords= {x:seat.x,y:seat.y} />
+<!-- row ={{seat.x}}
+col ={{seat.y}} -->
 </span>
 
 </div>
@@ -11,6 +13,8 @@ col ={{seat.y}}
 </template>
 
 <script>
+import seatPreview from "../../src/components/seatPreview";
+import SeatPreview from './seatPreview.vue';
 export default {
 data(){
     return {
@@ -30,6 +34,9 @@ created() {
     }
 }
 },
+components:{
+  seatPreview,
+}
 }
 </script>
 
