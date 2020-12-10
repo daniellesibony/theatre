@@ -2,8 +2,8 @@
   <section class="center-seats">
 <div  v-for="(row, i) in seats" :key="i">
 <span v-for="(seat,j) in row" :key="j" >
-col ={{seat.x}}
-row ={{seat.y}}
+row ={{seat.x}}
+col ={{seat.y}}
 </span>
 
 </div>
