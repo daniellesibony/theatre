@@ -21,11 +21,16 @@ ul {
 }
 
 
+.seat-svg{
+    cursor: pointer;
+}
+
 .reserved{
     background-color: #292929;
 }
 
 .selected{
     background-color: red;
+    cursor: none;
 }
 

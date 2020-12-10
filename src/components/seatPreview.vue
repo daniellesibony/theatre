@@ -1,30 +1,4 @@
 <template>
-
-  <!-- <section v-if=" ifShow" class="seat-preview"> -->
-    <!-- <div>
-  <section  class="seat-preview">
-<div class="seat-card"></div>
-<img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt="">
-<div class="blank" v-if="isBlank">---</div>
-  </section> -->
-
-  <!-- <section v-if="ifShow" class="seat-preview"> -->
-    <!-- <div class="seat-card"></div>
-    <img v-if="!isBlank"
-      src="../../src/assets/svgs/sofa.svg"
-      alt=""
-      @click="open"
-      :class="{ reserved: isReserved, selected: isSelected }"
-    />
-    <div  v-if="isShown" id="myModal" class="modal">
-      <div class="modal-content">
-        <span  @click="cancel" class="close">&times;</span>
-        <p>Confirm This Seat</p>
-        <button @click="confirm">Confirm</button>
-        <button @click="cancel">Cancel</button>
-      </div>
-    </div> -->
-  <!-- <section v-if=" ifShow" class="seat-preview"> -->
   <section  class="seat-preview">
 <div class="seat-card"></div>
 <img v-if="!isBlank" class="seat-svg" src="../../src/assets/svgs/sofa.svg" alt=""  @click="open"
